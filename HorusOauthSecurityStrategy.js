@@ -114,7 +114,7 @@ function HorusOauthSecurityStrategy(expressServer, options) {
         req.session.connectedUserInformation = horusAuthResponse;
         
         // injectando valores del public login (tokenV1 y datos básicos)
-        if (req.session.connectedUserInformation) {
+        if (req.session.publicUserInformation) {
           req.session.connectedUserInformation.tokenV1 = req.session.publicUserInformation.tokenV1;
           req.session.connectedUserInformation.email = req.session.publicUserInformation.email;
           req.session.connectedUserInformation.firstName = req.session.publicUserInformation.name;
